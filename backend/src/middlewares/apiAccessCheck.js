@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const accessCheck = (req, res, next) => {
+    return void next();
+    // jwt api access control disabled
     try {
         const decoded = jwt.verify(req.body.token, process.env.API_SECRET_KEY)
         if (decoded.key === process.env.API_KEY) {
