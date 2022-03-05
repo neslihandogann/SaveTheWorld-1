@@ -11,6 +11,7 @@ export default defineComponent({
   },
   methods: {
     onSubmit() {
+
       this.$appAxios.get("local").then((login_response) => {
         if (login_response?.data?.length > 0) {
           console.log(login_response);
@@ -27,7 +28,7 @@ export default defineComponent({
 
 <template>
   <img src="@/assets/background.svg" id="bg" alt="" />
-  <div data-aos="fade-right" data-aos-duration="2000">
+  <div data-aos="fade-right" data-aos-duration="1000">
     <div class="grid place-items-center h-screen">
       <div
         class="
@@ -238,7 +239,7 @@ export default defineComponent({
                   focus:outline-none focus:ring-2 focus:ring-offset-2
                   rounded-lg
                 "
-                to="/"
+                to="/Dashboard"
               >
                 Giris yap
               </button>
