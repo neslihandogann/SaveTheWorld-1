@@ -11,11 +11,21 @@ export default defineComponent({
   },
   methods: {
     onSubmit() {
-      this.$appAxios.get("local").then((login_response) => {
+      const token = jwt.sign(
+        {
+          key: process.env.API_KEY,
+          mail: this.userData.email,
+          pass: this.userData.password,
+        },
+        process.env.API_SECRET_KEY,
+        { expiresIn: "1m" }
+      );
+
+      this.$appAxios.get("").then((login_response) => {
         if (login_response?.data?.length > 0) {
           console.log(login_response);
           this.$store.commit("setUser", login_response?.data[0]);
-          this.$router.push({ name: "Dashboard" });
+          this.$router.push({ name: "Home" });
         } else {
           alert("username or password failed");
         }
@@ -191,7 +201,6 @@ export default defineComponent({
                   "
                   type="checkbox"
                   value=""
-                  id="flexCheckDefault"
                 />
                 <label
                   class="form-check-label inline-block text-gray-800"
