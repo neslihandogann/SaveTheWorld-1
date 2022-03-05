@@ -11,16 +11,23 @@ export default defineComponent({
   },
   methods: {
     onSubmit() {
-
-      this.$appAxios.get("local").then((login_response) => {
-        if (login_response?.data?.length > 0) {
-          console.log(login_response);
-          this.$store.commit("setUser", login_response?.data[0]);
-          this.$router.push({ name: "Dashboard" });
-        } else {
-          alert("username or password failed");
-        }
-      });
+      this.$appAxios
+        .get("/api/user/login", {
+          email: this.userData.email,
+          password: this.userData.password,
+        })
+        .then((login_response) => {
+          if (login_response?.data?.length > 0) {
+            console.log(login_response);
+            this.$store.commit("setUser", login_response?.data[0]);
+            this.$router.push({ name: "Home" });
+          } else {
+            alert("username or password failed");
+          }
+        });
+    },
+    onSubmit() {
+      this.$router.push("/");
     },
   },
 });
@@ -28,7 +35,7 @@ export default defineComponent({
 
 <template>
   <img src="@/assets/background.svg" id="bg" alt="" />
-  <div data-aos="fade-right" data-aos-duration="1000">
+  <div data-aos="fade-right" data-aos-duration="2000">
     <div class="grid place-items-center h-screen">
       <div
         class="
@@ -239,7 +246,6 @@ export default defineComponent({
                   focus:outline-none focus:ring-2 focus:ring-offset-2
                   rounded-lg
                 "
-                to="/Dashboard"
               >
                 Giris yap
               </button>

@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import './tailwind.css'
 import App from './App.vue'
 import 'aos/dist/aos.css'
-import VueSnap from 'vue-snap'
+import store from "./store"
 import 'vue-snap/dist/vue-snap.css'
 import appAxios from '@/utils/appAxios'
 import { routes } from './routes.js'
@@ -19,7 +19,7 @@ const router = createRouter({
 })
 app.component("Footer", Footer);
 app.component("Navbar", Navbar);
+app.use(store)
 app.use(router)
 app.config.globalProperties.$appAxios = appAxios;
-app.use(VueSnap)
 app.mount('#app')

@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted } from "vue";
 import AOS from "aos";
-
 onMounted(() => {
   AOS.init();
 });
@@ -10,6 +9,7 @@ import LandingSecond from "@/components/Home/LandingSecond.vue";
 import LandingThree from "@/components/Home/LandingThree.vue";
 import LandingFour from "@/components/Home/LandingFour.vue";
 import LandingFive from "@/components/Home/LandingFive.vue";
+import { mapGetters } from "vuex";
 </script>
 
 <template>

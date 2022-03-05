@@ -1,6 +1,7 @@
 <script>
 import Navbar from "@/components/appLayout/Navbar.vue";
 import { defineComponent } from "@vue/runtime-core";
+import { mapGetters } from "vuex";
 export default defineComponent({
   data() {
     return {
@@ -8,18 +9,30 @@ export default defineComponent({
         name: null,
         surname: null,
         email: null,
+        password: null,
       },
     };
   },
   methods: {
-    onSave() {
+    onSubmit() {
+      const user = [];
+      user.push(this.email);
+      user.push(this.name);
+      user.push(this.surname);
       this.$appAxios
-        .post("/users", {
-          ...this.userData,
+        .post("api/user/register", {
+          name: this.name,
+          surname: this.surname,
+          email: this.email,
+          password: this.password,
         })
-        .then((register_response_data) => {
-          console.log("register data=>>", register_response_data);
-          this.$router.push({ name: "Dashboard" });
+        .then((register_response) => {
+          console.log(register_response);
+          this.$store.commit("setUser", user);
+          this.$router.push("/dashboard");
+        })
+        .catch(function (error) {
+          console.log("error");
         });
     },
   },
@@ -58,6 +71,7 @@ export default defineComponent({
           "
         >
           SAVE THE WORLD
+          <div v-for="a in userData">{{ a }}</div>
         </div>
         <div class="mt-8">
           <form autoComplete="off">
@@ -67,6 +81,7 @@ export default defineComponent({
                   >Ad</label
                 >
                 <input
+                  v-model="this.userData.name"
                   type="text"
                   class="
                     rounded-r-lg
@@ -97,6 +112,7 @@ export default defineComponent({
                 >
                 <input
                   type="text"
+                  v-model="this.userData.surname"
                   class="
                     rounded-r-lg
                     flex-1
@@ -126,6 +142,7 @@ export default defineComponent({
                 >
                 <input
                   type="email"
+                  v-model="this.userData.email"
                   class="
                     rounded-r-lg
                     flex-1
@@ -145,6 +162,37 @@ export default defineComponent({
                     focus:border-transparent
                   "
                   placeholder="google>all@gmail.com"
+                />
+              </div>
+            </div>
+            <div class="flex flex-col mb-2">
+              <div class="flex">
+                <label
+                  for=""
+                  class="px-6 py-4 -ml-12 -mr-2 text-gray-800 font-bold"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  v-model="this.userData.password"
+                  class="
+                    rounded-r-lg
+                    flex-1
+                    appearance-none
+                    border border-gray-300
+                    py-2
+                    px-4
+                    rounded-md
+                    bg-white
+                    custom-text
+                    placeholder-gray-400
+                    shadow-sm
+                    text-base
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-green-300
+                    focus:border-transparent
+                  "
                 />
               </div>
             </div>
@@ -173,7 +221,6 @@ export default defineComponent({
                   "
                   type="checkbox"
                   value=""
-                  id="flexCheckDefault"
                 />
                 <label
                   class="form-check-label inline-block text-gray-800"
@@ -204,7 +251,8 @@ export default defineComponent({
               <img src="@/assets/line.svg" class="mb-3" alt="" />
             </div>
             <div class="flex w-ful">
-              <router-link
+              <button
+                @click="onSubmit"
                 class="
                   w-full
                   px-12
@@ -223,8 +271,9 @@ export default defineComponent({
                   rounded-lg
                 "
                 to="/"
-                >Üye Ol</router-link
               >
+                Üye Ol
+              </button>
             </div>
             <div class="flex w-ful mt-3">
               <router-link
@@ -295,10 +344,7 @@ export default defineComponent({
             >Google ile giriş yap
           </button>
         </div>
-        <div class="flex text-xs">
-          Üye olarak Hizmet Koşullarını ve Gizlilik Politikasını kabul etmiş
-          olursunuz
-        </div>
+        <div class="flex text-xs"></div>
       </div>
     </div>
   </div>
