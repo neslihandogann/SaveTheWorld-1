@@ -52,10 +52,10 @@ const createUser = async (name, surname, photoURL, email, password) => {
         // return result;
         return {success: true};
     } catch (error) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error(error)
-        return {success: false, error: error};
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        // console.error(error)
+        return {success: false};
     }
 }
 
