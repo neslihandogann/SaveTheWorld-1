@@ -17,7 +17,7 @@ export default {
         })
         .then((login_response) => {
           console.log(login_response);
-          this.$store.commit("setUser", this.email);
+          this.$store.commit("setUser", this.userData.email);
           this.$router.push("/dashboard");
         });
     },

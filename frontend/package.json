@@ -18,7 +18,8 @@
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",
     "vue-snap": "^1.0.0-alpha.5",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "vuex-persistedstate": "^4.0.0"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.5.0",

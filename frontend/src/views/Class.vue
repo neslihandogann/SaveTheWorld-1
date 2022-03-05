@@ -1,13 +1,9 @@
-
 <template>
   <Header />
-  <h1>dashboard</h1>
+  <h1>class</h1>
 </template>
 
 <script>
 export default {};
 </script>
 
-
-<style >
-</style>
