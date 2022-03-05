@@ -7,6 +7,6 @@ const token = jwt.sign({
     surname: "hero",
     mail: "bdptxjyptl@midiharmonica.com",
     pass: "123456"
-}, process.env.API_SECRET_KEY, {expiresIn: '1h'})
+}, process.env.API_SECRET_KEY, {expiresIn: '1m'})
 
 console.log(token);
