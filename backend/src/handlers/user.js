@@ -2,9 +2,9 @@ const {createUser, checkLogin} = require("../utils/firebase");
 
 
 const userLogin = (req, res) => {
-    const token = req.jwt;
-    checkLogin(token.mail, token.pass).then((result) => {
-        res.send(result);
+    const user = req.body;
+    checkLogin(user.email, user.password).then((result) => {
+        res.send({success: result});
     })
 }
 
@@ -13,8 +13,9 @@ const userGoogleLogin = (req, res) => {
 }
 
 const userRegister = (req, res) => {
-    const token = req.jwt;
-    createUser(token.name, token.surname, "", token.mail, token.pass).then((result) => {
+    //!todo check inputs if they are empty send status false
+    const user = req.body;
+    createUser(user.name, user.surname, "", user.email, user.password).then((result) => {
         res.send(result);
     })
 }
