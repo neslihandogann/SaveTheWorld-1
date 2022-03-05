@@ -8,7 +8,7 @@
       px-2
       py-3
       navbar-expand-lg
-      bg-red-400
+      bg-white
       mb-3
     "
   >
@@ -36,7 +36,6 @@
             py-2
             whitespace-no-wrap
             uppercase
-            text-white
           "
           id="no1"
           href="#enerjiSA"
@@ -81,25 +80,18 @@
                 uppercase
                 font-bold
                 leading-snug
-                text-white
                 hover:opacity-75
               "
               href="#enerjiSA"
             >
               <i
-                class="
-                  fab
-                  fa-facebook-square
-                  text-lg
-                  leading-lg
-                  text-white
-                  opacity-75
-                "
+                class="fab fa-facebook-square text-lg leading-lg opacity-75"
               /><span class="ml-2">sherhsehrher</span>
             </a>
           </li>
           <li class="nav-item">
-            <a
+            <router-link
+              to="/class"
               class="
                 px-3
                 py-2
@@ -109,7 +101,6 @@
                 uppercase
                 font-bold
                 leading-snug
-                text-white
                 hover:opacity-75
               "
               href="#enerjiSA"
@@ -117,6 +108,27 @@
               <i
                 class="fab fa-twitter text-lg leading-lg text-white opacity-75"
               /><span class="ml-2">DERSLER</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <a
+              class="
+                px-3
+                py-2
+                flex
+                items-center
+                text-xs
+                uppercase
+                font-bold
+                leading-snug
+                hover:opacity-75
+              "
+              href="#enerjiSA"
+            >
+              <i class="fab fa-pinterest text-lg leading-lg opacity-75" /><span
+                class="ml-2"
+                >METAVERSE</span
+              >
             </a>
           </li>
           <li class="nav-item">
@@ -130,49 +142,14 @@
                 uppercase
                 font-bold
                 leading-snug
-                text-white
                 hover:opacity-75
               "
               href="#enerjiSA"
             >
-              <i
-                class="
-                  fab
-                  fa-pinterest
-                  text-lg
-                  leading-lg
-                  text-white
-                  opacity-75
-                "
-              /><span class="ml-2">METAVERSE</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="
-                px-3
-                py-2
-                flex
-                items-center
-                text-xs
-                uppercase
-                font-bold
-                leading-snug
-                text-white
-                hover:opacity-75
-              "
-              href="#enerjiSA"
-            >
-              <i
-                class="
-                  fab
-                  fa-pinterest
-                  text-lg
-                  leading-lg
-                  text-white
-                  opacity-75
-                "
-              /><span class="ml-2">BLOG</span>
+              <i class="fab fa-pinterest text-lg leading-lg opacity-75" /><span
+                class="ml-2"
+                >BLOG</span
+              >
             </a>
           </li>
         </ul>

@@ -1,6 +1,5 @@
 <template>
-  <Header />
-  <h1>class</h1>
+  <CustomHeader />
 </template>
 
 <script>
