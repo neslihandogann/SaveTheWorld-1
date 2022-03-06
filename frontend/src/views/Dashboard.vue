@@ -343,7 +343,56 @@
       </div>
     </nav>
   </div>
-  <div></div>
+
+  <!-- ARA KISMI -->
+
+  <!-- main container -->
+  <div class="container px-4 mx-auto" id="mainBilesen">
+    <div class="flex flex-wrap">
+      <div class="w-full px-4 flex-1">
+        <span
+          class="
+            text-sm
+            block
+            my-4
+            p-3
+            text-blueGray-700
+            rounded
+            border border-solid border-blueGray-100
+          "
+          >One of three columns</span
+        >
+      </div>
+      <div class="w-full px-4 flex-1">
+        <span
+          class="
+            text-sm
+            block
+            my-4
+            p-3
+            text-blueGray-700
+            rounded
+            border border-solid border-blueGray-100
+          "
+          >One of three columns</span
+        >
+      </div>
+      <div class="w-full px-4 flex-1">
+        <span
+          class="
+            text-sm
+            block
+            my-4
+            p-3
+            text-blueGray-700
+            rounded
+            border border-solid border-blueGray-100
+          "
+          >One of three columns</span
+        >
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -391,5 +440,8 @@ a {
 }
 #myIcon {
   padding-left: 25px;
+}
+#mainBilesen {
+  padding: 0px 60px;
 }
 </style>

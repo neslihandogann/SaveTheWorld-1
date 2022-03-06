@@ -205,7 +205,14 @@
         />
       </div>
       <small
-        class="font-normal leading-normal mt-0 mb-4 text-emerald-800"
+        class="
+          font-normal
+          flex
+          justify-center
+          leading-normal
+          mt-0
+          text-emerald-800
+        "
         id="orangeC"
       >
         12.5 🍊
