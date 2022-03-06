@@ -9,7 +9,8 @@ import { routes } from './routes.js'
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Footer from "@/components/appLayout/Footer.vue"
-import Navbar from "@/components/appLAyout/Navbar.vue"
+import Navbar from "@/components/appLayout/Navbar.vue"
+import CustomHeader from "@/components/appLayout/CustomHeader.vue"
 
 const app = createApp(App)
 
@@ -19,6 +20,7 @@ const router = createRouter({
 })
 app.component("Footer", Footer);
 app.component("Navbar", Navbar);
+app.component("CustomHeader", CustomHeader);
 app.use(store)
 app.use(router)
 app.config.globalProperties.$appAxios = appAxios;

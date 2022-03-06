@@ -2,7 +2,8 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Dashboard from "./views/Dashboard.vue"
 import Register from './views/Register.vue'
-import Serhat from './views/Serhat.vue'
+import Blog from './views/Blog.vue'
+import Class from './views/Class.vue'
 import NotFound from './views/NotFound.vue'
 
 /** @type {import('vue-router').RouterOptions['routes']} */
@@ -23,9 +24,14 @@ export const routes = [
     // component: () => import('./views/About.vue')
   },
   {
-    path: '/serhat',
-    meta: { title: 'Serhat' },
-    component: Serhat,
+    path: '/blog',
+    meta: { title: 'Blog' },
+    component: Blog,
+  },
+  {
+    path: '/class',
+    meta: { title: 'Class' },
+    component: Class,
   },
   {
     path: '/Dashboard',

@@ -8,12 +8,13 @@
   <link rel="preload" href="/font/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
   <link rel="stylesheet" href="/font/inter.css" />
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://unpkg.com/vuex-persistedstate/dist/vuex-persistedstate.umd.js"></script>
   <style>
     html {
       scroll-behavior: smooth;
     }
   </style>
-   <script>
+  <script>
     feather.replace()
   </script>
 </head>
@@ -21,6 +22,9 @@
 <body>
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
+  <script>
+    window.createPersistedState
+  </script>
 </body>
 
 
