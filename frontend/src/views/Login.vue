@@ -16,9 +16,13 @@ export default {
           password: this.userData.password,
         })
         .then((login_response) => {
-          console.log(login_response);
-          this.$store.commit("setUser", this.userData.email);
-          this.$router.push("/dashboard");
+          console.log(login_response.data.success);
+          if (login_response.data.success) {
+            this.$store.commit("setUser", this.userData.email);
+            this.$router.push("/dashboard");
+          } else {
+            alert("Bilgilerinizi kontrol ediniz");
+          }
         });
     },
   },

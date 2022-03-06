@@ -27,9 +27,13 @@ export default defineComponent({
           password: this.password,
         })
         .then((register_response) => {
-          console.log(register_response);
-          this.$store.commit("setUser", user);
-          this.$router.push("/dashboard");
+          if (register_response.data.success) {
+            console.log(register_response);
+            this.$store.commit("setUser", user);
+            this.$router.push("/dashboard");
+          } else {
+            alert("Lütfen tüm bilgileri doldurunuz");
+          }
         })
         .catch(function (error) {
           console.log("error");
