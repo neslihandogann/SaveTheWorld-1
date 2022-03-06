@@ -2,6 +2,6 @@
 import axios from 'axios'
 
 const appAxios = axios.create({
-    baseURL: process.env.BACKEND_IP,
+    baseURL: "https://savetheworld.oguzkagan.xyz",
 });
 export default appAxios;
